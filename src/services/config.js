@@ -1,3 +1,3 @@
 export const config = {
-    baseUrl: "https://josearriola2021.github.io/dataJson/data.json"
+    baseUrl: "https://josearriola2021.github.io/USIE/data.json"
 };
