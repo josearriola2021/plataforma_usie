@@ -1,0 +1,39 @@
+{"users": [
+    {
+        "email": "joseluisperez1718@gmail.com",
+        "password": "1234",
+        "nickname": "Jose",
+        "imgUser": "https://i.postimg.cc/hv1js2QG/img-User-Jose-Arriola.png",
+        "nombre": "Jose Luis",
+        "apellidos": "Arriola Perez",
+        "DNI": "48596126",
+        "telefono": "999444123",
+        "ciudad": "Chiclayo",
+        "distrito": "Chiclayo",
+        "provincia": "Chiclayo",
+        "departamento": "Lambayeque",
+        "pais": "Peru",
+        "direccion": "Av. Las Flores 123, Urb Remigio Silva",
+        "tarjeta": "1234 5678 1111 4588",
+        "urlTarjeta": "https://i.postimg.cc/MHXXp6f7/visa.jpg"
+    },
+    {
+        "email": "brunodiaz@gmail.com",
+        "password": "1111",
+        "nickname": "Bruno",
+        "nombre": "Bruno",
+        "apellidos": "Diaz",
+        "imgUser": "https://i.postimg.cc/pdrPb0w7/img-User-Bruno-Diaz.png",
+        "DNI": "44667832",
+        "telefono": "982444123",
+        "ciudad": "Lima",
+        "distrito": "Miraflores",
+        "provincia": "Lima",
+        "departamento": "Lima",
+        "pais": "Peru",
+        "direccion": "Av. Arequipa 145 Miraflores",
+        "tarjeta": "1234 5678 1111 2391",
+        "urlTarjeta": "https://i.postimg.cc/MHXXp6f7/visa.jpg"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+/* Estilos para formulario de iniciar sesion */
+.login-form {
+    max-width: 300px;
+}
+.login-form-forgot {
+    float: right;
+}
+.ant-col-rtl .login-form-forgot {
+    float: left;
+}
+.ant-btn-primary {
+    width: 100%;
+}
