@@ -64,7 +64,7 @@ const Card = ({producto}) => {
       </Link>
       <div className="card-body flex-none">
         <h2 className="card-title text-base">{nombre}</h2>
-        <p className="text-red-500 font-bold text-base">{precio}%</p>
+        <p className="text-red-500 font-bold text-base">Avance: {precio}%</p>
         <div className="card-actions justify-end agregar-button">
           {buttonSecondary ? (
             <Button
@@ -73,7 +73,7 @@ const Card = ({producto}) => {
               size={size}
               onClick={activeButtonSecondary}
             >
-              Agregar
+              Ver más
             </Button>
           ) : (
             <Button
