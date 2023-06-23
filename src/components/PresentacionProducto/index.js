@@ -17,30 +17,30 @@ const PresentacionProducto = ({data, nombre, id}) => {
     const PagosEntrega = () => {
       return (
         <Card>
-          <Title level={5}>Producto entregado por</Title>
-          <p>Ecommerce</p>
+          <Title level={5}>Empresa:</Title>
+          <p>ENGIE ENERGÍA PERÚ</p>
           <Divider />
           <div>
             <Title level={5} strong>
-              Tipo de entrega disponible
+              Informes de Supervisión
             </Title>
             <div className="mb-3">
               <i className="bi bi-truck text-3xl text-red-500"></i>
               &nbsp;&nbsp;&nbsp;
-              <span className="text-gray-500">Delivery Programado</span>
+              <span className="text-gray-500">Campo</span>
             </div>
             <div>
               <i className="bi bi-shop text-3xl text-red-500"></i>
               &nbsp;&nbsp;&nbsp;
-              <span className="text-gray-500">Recojo en Tienda </span>
+              <span className="text-gray-500">Gabinete</span>
             </div>
           </div>
           <Divider />
           <div>
             <Title level={5} strong>
-              Métodos de pago
+              Última Actualización
             </Title>
-            <p className="m-0">Diversas formas de pago</p>
+            <p className="m-0">Junio 2023</p>
             <img
               className="mt-3"
               width="150"
@@ -83,16 +83,19 @@ const PresentacionProducto = ({data, nombre, id}) => {
                 <Title level={3}>{nombre}</Title>
                 <Divider style={{ width: "10px" }} />
                 <Title level={4} type="danger" style={{ marginBottom: "20px" }}>
-                  Precio: S/.{searchProductoId[0].precio}
+                  Avance Físico: {searchProductoId[0].precio} %
                 </Title>
-                <Button
+                <Title level={4} type="danger" style={{ marginBottom: "20px" }}>
+                  Avance Económico: {searchProductoId[0].precio} MMUSS$
+                </Title>
+                {/* <Button
                   type="primary"
                   size="large"
                   shape="round"
                   style={{ width: "200px" }}
                 >
                   Agregar
-                </Button>
+                </Button> */}
               </div>
 
               <div className="md:w-80 col-span-1 justify-center">
@@ -103,7 +106,7 @@ const PresentacionProducto = ({data, nombre, id}) => {
             <div className="mt-16 flex flex-col items-center">
               <div className="w-full md:w-3/5">
                 <Title level={3} className="text-center">
-                  Sobre este Producto
+                  Datos de la central
                 </Title>
                 <Tabs
                   defaultActiveKey="1"

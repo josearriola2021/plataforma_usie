@@ -7,7 +7,7 @@ const ProductosInfo = () => {
     const [data, setData] = useState([]);
 
     const fetchProductosInfo = async () => {
-        const res = await fetch("https://josearriola2021.github.io/dataJson/data.json");
+        const res = await fetch("https://josearriola2021.github.io/USIE/data.json");
         const data = await res.json();
         setData(data);
     }

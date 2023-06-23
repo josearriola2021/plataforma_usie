@@ -17,8 +17,8 @@ const Ordenar = ({setEstadoOrdenar}) => {
                 }}
                 onChange={handleChange}
             >
-                <Option value="Precio alto">Precio alto</Option>
-                <Option value="Precio bajo">Precio bajo</Option>
+                <Option value="Precio alto">Avance, decreciente</Option>
+                <Option value="Precio bajo">Avance, creciente</Option>
                 <Option value="Nombre creciente">Nombre, creciente</Option>
                 <Option value="Nombre decreciente">Nombre, decreciente</Option>
             </Select>

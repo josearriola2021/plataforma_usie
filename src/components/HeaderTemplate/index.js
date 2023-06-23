@@ -3,6 +3,7 @@ import { AuthContext } from '../../context/AuthContext';
 import { CarritoComprasContext } from '../../context';
 import {Link} from "react-router-dom"
 import DrawerCart from '../DrawerCart';
+import { Divider } from 'antd';
 
 const HeaderTemplate = ({ children, setIsModalVisible }) => {
 
@@ -38,9 +39,10 @@ const HeaderTemplate = ({ children, setIsModalVisible }) => {
       <>
         <header className="sticky top-0 z-10">
           <div className="navbar bg-base-100">
-            <div className="md:block hidden" style={{ flex: "3" }}>
+            <div className="md:flex hidden" style={{ flex: "3" }}>
+              <img src='/logo_osinergmin.png' className='h-12'/>
               <a href='/' className="btn btn-ghost normal-case text-xl">
-                Tienda Virtual
+                USIE
               </a>
             </div>
             <div
@@ -83,7 +85,7 @@ const HeaderTemplate = ({ children, setIsModalVisible }) => {
                 </ul>
               </div>
               {/* Icono de carrito de compras */}
-              <div className="dropdown dropdown-end">
+              {/* <div className="dropdown dropdown-end">
                 <label tabindex="0" className="btn btn-ghost btn-circle">
                   <figure className="indicator">
                     <i className="bi bi-cart text-3xl"></i>
@@ -120,7 +122,7 @@ const HeaderTemplate = ({ children, setIsModalVisible }) => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </header>
