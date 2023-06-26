@@ -85,14 +85,15 @@ const Card = ({producto, data}) => {
           </Button>
 
           {/* Modal de Informes */}
-          <Modal title="Informes" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-            {
+          <Modal scrollable={true} title="Informes" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+            <div className="overflow-scroll h-72">{
               array_informes?.map((elemento) => (
-                <p>{elemento.cod}</p>
+                <p>{elemento.cod} - {elemento.sup}</p>
               )
                 
               )
             }
+            </div>
           </Modal>
         </div>  
       </div>
