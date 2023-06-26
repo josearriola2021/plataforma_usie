@@ -31,8 +31,8 @@ const Card = ({producto, data}) => {
 
   
 
-  const filtro_informes = data.productos?.filter((producto) =>
-    producto.nombre.includes(indicador)
+  const filtro_informes = data.productos?.filter((elemento) =>
+    elemento.nombre.includes(indicador)
   );
 
   const array_informes = filtro_informes[0].informes;
@@ -85,10 +85,10 @@ const Card = ({producto, data}) => {
           </Button>
 
           {/* Modal de Informes */}
-          <Modal scrollable={true} title="Informes" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-            <div className="overflow-scroll h-72">{
+          <Modal scrollable={true} title="Informes de Supervisión" footer={null} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+            <div className="overflow-scroll max-h-96">{
               array_informes?.map((elemento) => (
-                <p>{elemento.cod} - {elemento.sup}</p>
+                <a href="inf/2020-10-10.pdf" target="_blank" className="block p-2 cursor-pointer text-gray-700 hover:bg-gray-50">{elemento.cod} - {elemento.sup}</a>
               )
                 
               )

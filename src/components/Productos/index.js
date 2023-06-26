@@ -69,7 +69,7 @@ const Productos = ({ estadoBuscador, estadoCategoria, activeBuscador, estadoOrde
         )
       ) : (
         resultadoCategoria?.map((producto) => {
-          return <Card producto={producto} key={producto.id}/>;
+          return <Card producto={producto} data={data} key={producto.id}/>;
         })
       )}
     </div>
