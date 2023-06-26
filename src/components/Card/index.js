@@ -9,29 +9,43 @@ import React from "react";
 import "../../index.css";
 
 
-const Card = ({producto}) => {
+const Card = ({producto, data}) => {
 
-  const {id, nombre, imagen, precio} = producto;
+  const {id, nombre, imagen, precio, sup} = producto;
   const [size, setSize] = useState('large');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [data, setData] = useState({});
+  const [indicador, setIndicador] = useState("");
+  // const [filtro_informes, setFiltro_informes] = useState({});
 
-  async function exampleFetch() {
-    const response = await fetch('https://josearriola2021.github.io/data_informes/lista_informes.json');
-    const data = await response.json();
-    setData(data);
+  // async function exampleFetch() {
+  //   const response = await fetch('https://josearriola2021.github.io/data_informes/lista_informes.json');
+  //   const data = await response.json();
+  //   const filtros = data.results?.filter((elemento) => {
+  //     return elemento.id_inst == id;
+  //   })
+  //   setFiltro_data(filtros);
+  //   console.log(filtro_data)
+  // }
+
+  // exampleFetch();
+
+  
+
+  const filtro_informes = data.productos?.filter((producto) =>
+    producto.nombre.includes(indicador)
+  );
+
+  const array_informes = filtro_informes[0].informes;
+
+  const capturar_evento = (e) => {
+    setIndicador(e.currentTarget.id);
+    console.log(indicador);
   }
 
-  exampleFetch();
 
-  // const data_informes = data?.filter((elemento) =>
-  //   elemento.id_inst = id,
-  // );
-
-
-  const showModal = () => {
+  const showModal = (e) => {
     setIsModalOpen(true);
-    console.log(data)
+    capturar_evento(e);
   };
 
   const handleOk = () => {
@@ -66,19 +80,21 @@ const Card = ({producto}) => {
           </a>
 
           {/* Boton de Informes */}
-          <Button onClick={showModal} type="primary" shape="round" size={size}>
+          <Button onClick={showModal} type="primary" shape="round" size={size} id={nombre}>
             ver Informes
           </Button>
 
           {/* Modal de Informes */}
-          <Modal title="Informes" open={isModalOpen}>
+          <Modal title="Informes" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
             {
-              data.results?.map((elemento) => (
-                <p>{elemento.email}</p>
-              ))
+              array_informes?.map((elemento) => (
+                <p>{elemento.cod}</p>
+              )
+                
+              )
             }
           </Modal>
-        </div>
+        </div>  
       </div>
     </div>
   );

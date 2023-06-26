@@ -33,6 +33,8 @@ const Productos = ({ estadoBuscador, estadoCategoria, activeBuscador, estadoOrde
   const resultadoCategoria = data.productos?.filter((producto) =>
     estadoCategoria.includes(producto.itemcategoria)
   );
+
+  
   //Se seleccionan aquellos productos que coinciden con el estadoCategoria.
   
   switch (estadoOrdenar) {
@@ -59,7 +61,7 @@ const Productos = ({ estadoBuscador, estadoCategoria, activeBuscador, estadoOrde
       {activeBuscador ? (
         resultadoBuscador != "" ? (
           resultadoBuscador?.map((producto) => {
-            return <Card producto={producto} key={producto.id} />;
+            return <Card producto={producto} data={data} key={producto.id} />;
           }) 
           )
          : (
