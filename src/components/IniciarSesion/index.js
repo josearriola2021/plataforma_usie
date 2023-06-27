@@ -47,7 +47,7 @@ const IniciarSesion  = ({isModalVisible, setIsModalVisible, setIsModalVisibleReg
   return (
     <Modal
       title="Iniciar Sesión"
-      visible={isModalVisible}
+      open={isModalVisible}
       onCancel={handleCancel}
       footer={null}
     >
