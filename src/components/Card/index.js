@@ -31,21 +31,31 @@ const Card = ({producto, data}) => {
 
   
 
+  // Código para los informes de supervisión
   const filtro_informes = data.productos?.filter((elemento) =>
     elemento.nombre.includes(indicador)
   );
 
+  //Array de información de informes
   const array_informes = filtro_informes[0].informes;
 
+  //string ruta de los contratos
+  const ubicación_contrato = filtro_informes[0].dir_contrato;
+
+  //Captura el id asociado al boton ver informes
   const capturar_evento = (e) => {
     setIndicador(e.currentTarget.id);
     console.log(indicador);
   }
 
-
+  //Captura el id asociado al boton contratos
+  const capturar_contrato = (e) => {
+    setIndicador(e.currentTarget.id);
+  }
+  
   const showModal = (e) => {
-    setIsModalOpen(true);
-    capturar_evento(e);
+    setIsModalOpen(true); 
+    capturar_evento(e); //Captura evento del boton
   };
 
   const handleOk = () => {
@@ -75,27 +85,50 @@ const Card = ({producto, data}) => {
         <p className="text-red-500 font-bold text-base">Avance: {precio}%</p>
         <div className="card-actions agregar-button">
           {/* Boton de Contratos */}
-          <a type="primary" className="text-black">
+          <a
+            href={ubicación_contrato}
+            onClick={capturar_contrato}
+            target="_blank"
+            type="primary"
+            className="text-black"
+            id={nombre}
+          >
             <CopyrightOutlined style={{ fontSize: "24px" }} />
           </a>
 
           {/* Boton de Informes */}
-          <Button onClick={showModal} type="primary" shape="round" size={size} id={nombre}>
+          <Button
+            onClick={showModal}
+            type="primary"
+            shape="round"
+            size={size}
+            id={nombre}
+          >
             ver Informes
           </Button>
 
           {/* Modal de Informes */}
-          <Modal scrollable={true} title="Informes de Supervisión" footer={null} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-            <div className="overflow-scroll max-h-96">{
-              array_informes?.map((elemento) => (
-                <a href="inf/2020-10-10.pdf" target="_blank" className="block p-2 cursor-pointer text-gray-700 hover:bg-gray-50">{elemento.cod} - {elemento.sup}</a>
-              )
-                
-              )
-            }
+          <Modal
+            scrollable={true}
+            title="Informes de Supervisión"
+            footer={null}
+            open={isModalOpen}
+            onOk={handleOk}
+            onCancel={handleCancel}
+          >
+            <div className="overflow-scroll max-h-96">
+              {array_informes?.map((elemento) => (
+                <a
+                  href={elemento.dir_inf}
+                  target="_blank"
+                  className="m-0 border-2 border-b-neutral-300 block p-2 cursor-pointer text-gray-700 hover:bg-gray-50"
+                >
+                  {elemento.cod} - {elemento.sup}
+                </a>
+              ))}
             </div>
           </Modal>
-        </div>  
+        </div>
       </div>
     </div>
   );
