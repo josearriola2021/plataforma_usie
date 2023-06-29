@@ -22,7 +22,7 @@ const PresentacionProducto = ({data, nombre, id}) => {
           <Divider />
           <div>
             <Title level={5} strong>
-              Informes de Supervisión
+              Ubicación
             </Title>
             <div className="mb-3">
               <i className="bi bi-truck text-3xl text-red-500"></i>

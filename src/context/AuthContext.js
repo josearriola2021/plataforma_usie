@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { Productos } from "../components";
+import { Navigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
@@ -53,7 +54,7 @@ export const AuthProvider = ({children}) => {
           userAdmin != ""
             ? setUserAuth(userAdmin[0].nickname)
             : setUserAuth(userRegistrado[0].nickname);
-          window.location.href="/"
+            window.location.href="/USIE"
         }, 4000);
         setMensajeUserNoAuth(true);
       }

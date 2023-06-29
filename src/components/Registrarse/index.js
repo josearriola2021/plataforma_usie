@@ -92,7 +92,7 @@ const Registrarse = ({isModalVisibleRegistrarse, setIsModalVisibleRegistrarse })
   return (
     <Modal
       title="Registrarse"
-      visible={isModalVisibleRegistrarse}
+      open={isModalVisibleRegistrarse}
       onCancel={handleCancelRegistrarse}
       footer={null}
     >

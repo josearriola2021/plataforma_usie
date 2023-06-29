@@ -74,7 +74,7 @@ const Card = ({producto, data}) => {
       className="card bg-base-100 shadow-xl max-w-xs"
       style={{ maxHeight: "500px" }}
     >
-      <Link to={`/${nombre}/${id}`}>
+      <Link to={`/USIE/${nombre}/${id}`}>
         <figure>
           <img src={imagen} alt="Nombre" />
         </figure>
